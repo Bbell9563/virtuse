@@ -17,9 +17,15 @@ export const Holder = styled.div`
 `
 export const Title = styled.div`
   text-align:center;
-  margin: 1% 10%;
-  border-radius: 10px;
   padding:1%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://dallasvoice.com/wp-content/uploads/2019/07/self-defense-header.jpg');
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   @media(max-width: 600px) {
     margin: 2% 2%;
   }
@@ -28,7 +34,7 @@ export const Title = styled.div`
 
 export const Main = styled.div`
   font-family: 'Black Ops One';
-  color:#999;
+  color:white;
   font-size: 30px;
   font-weight: bolder;
   @media(max-width: 600px) {
