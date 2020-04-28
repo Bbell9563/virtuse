@@ -5,7 +5,6 @@ export const FooterHolder = styled.div`{
   display: flex;
   justify-content:center;
   padding: 0.5% 0 0.5% 0; 
-  background-color:#d996a2;
 }`
 
 export const FooterItem = styled.div`{

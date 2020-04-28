@@ -1,7 +1,8 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom'
-import { NavHolder, style } from '../styles/NavStyle'
+import { NavHolder, style, ImageHolder, LoginLink, RegisterLink } from '../styles/NavStyle'
+import Logo from '../images/Logo.png'
 
 class Navbar extends React.Component {
 
@@ -10,22 +11,20 @@ class Navbar extends React.Component {
 
     if (user) {
       return (
-        <div onClick={ () => handleLogout(this.props.history) }>
+        <div onClick={() => handleLogout(this.props.history)}>
           Log-Out
         </div>
       )
     } else {
       return (
-        <div>
-          <div>
-            <Link to='/login' style={style.link}>
+        <div style={{ width: '50%', display: 'flex', flexDirection:'column', justifyContent:'center' }}>
+          <div style={{ display: 'flex', justifyContent:'flex-end', padding:'1% 0 1% 0' }}>
+            <LoginLink as={Link} to='/login'>
               Login
-          </Link>
-          </div>
-          <div>
-            <Link to='/register' style={style.link}>
-              Register
-          </Link>
+            </LoginLink>
+            <RegisterLink as={Link} to='/register'>
+                Register
+            </RegisterLink>
           </div>
         </div>
       )
@@ -36,13 +35,11 @@ class Navbar extends React.Component {
     return (
       <NavHolder>
         <div>
-          <Link to='/' style={{...style.link, fontFamily: 'Parisienne', fontSize:'40px'}}>
-            Shakti
-        </Link>
+          <Link to='/'>
+            <img src={Logo} style={{ width: '100px' }} />
+          </Link>
         </div>
-        <div>
-          {this.rightNavItems()}
-        </div>
+        {this.rightNavItems()}
       </NavHolder>
     )
   }
