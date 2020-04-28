@@ -20,7 +20,7 @@ export const FooterItem = styled.div`{
   }
 }`
 
-export const atIcon = styled.div`
+export const AtIcon = styled.div`
   font-size: 16px;
   @media(max-width: 600px) {
     font-size: 10px;
