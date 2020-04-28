@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom'
-import { NavHolder, style, ImageHolder, LoginLink, RegisterLink } from '../styles/NavStyle'
+import { NavHolder, style, ImageHolder, LoginLink, RegisterLink, IconDiv } from '../styles/NavStyle'
 import Logo from '../images/Logo.png'
 
 class Navbar extends React.Component {
@@ -43,10 +43,13 @@ class Navbar extends React.Component {
   render() {
     return (
       <NavHolder>
-        <div>
-          <Link to='/'>
-            <img src={Logo} style={{ width: '100px' }} />
-          </Link>
+        <div >
+          <IconDiv as={Link} to='/' >
+
+            <img src={Logo} style={{ width: '100px'}} />
+            <div style={{bottom:'10px', right:'20px', display:'flex', flexDirection:'column', justifyContent:'flex-end', marginLeft: '-35px', fontSize:'10px', marginBottom:'14px'}}>Yoga And Holistics</div>
+
+          </IconDiv>
         </div>
         {this.rightNavItems()}
       </NavHolder>

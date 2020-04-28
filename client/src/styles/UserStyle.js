@@ -81,6 +81,9 @@ const Button = styled.div`
   padding: 2%;
   border-radius: 30px;
   text-align:center;
+  font-family: 'Electrolize';
+  font-weight: bolder;
+  font-size: 20px;
 `
 
 export const Delete = styled(Button)`

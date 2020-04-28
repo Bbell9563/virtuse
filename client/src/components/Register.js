@@ -8,7 +8,7 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { auth: { handleRegister, }, history, } = this.props;
-    var name = `${document.getElementById('firstName').value}${document.getElementById('lastName').value}`
+    var name = document.getElementById('name').value
     var email = document.getElementById('email').value
     var phone = document.getElementById('phone').value
     var gender = document.getElementById('gender').value
@@ -20,8 +20,8 @@ class Register extends React.Component {
     var image = 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
     if (password === passConfirm) {
       handleRegister({
-         email, password, phone, gender, medical_history, age, role, name, image
-        }, history);
+        email, password, phone, gender, medical_history, age, role, name, image
+      }, history);
     }
     else {
       var alert = document.getElementById('alert')
@@ -33,62 +33,61 @@ class Register extends React.Component {
   render() {
     return (
       <div>
-        <Alert id='alert' style={{display:'none'}}>Alert</Alert>
-        <Form>
-          <FormHeader>Register</FormHeader>
-          <FormGroup>
-            <div style={{ width: '48%' }}>
-              <Label>First Name</Label>
-              <FormInput id='firstName' type='text' />
-            </div>
-            <div style={{ width: '48%' }}>
-              <Label>Last Name</Label>
-              <FormInput id='lastName' type='text' />
-            </div>
-          </FormGroup>
 
-          <FormGroup>
-            <div style={{ width: '48%' }}>
+        <Form>
+          <Alert id='alert' style={{ display: 'none' }}>Alert</Alert>
+          <div style={{ padding: '3%' }}>
+            <FormHeader>Register</FormHeader>
+
+            <div>
+              <Label>Name</Label>
+              <FormInput id='name' type='text' />
+            </div>
+
+
+
+            <div>
               <Label>Email</Label>
               <FormInput id='email' type='text' />
             </div>
 
-            <div style={{ width: '48%' }}>
+            <div>
               <Label>Phone</Label>
               <FormInput id='phone' type='text' />
             </div>
-          </FormGroup>
-          <FormGroup>
-            <div style={{ width: '48%' }}>
-              <Label>Gender</Label>
-              <FormInput id='gender' />
-            </div>
-            <div style={{ width: '48%' }}>
-              <Label>Age</Label>
-              <FormInput id='age' type='text' />
-            </div>
+
+            <FormGroup>
+              <div style={{width:'48%'}}>
+                <Label>Gender</Label>
+                <FormInput style={{paddingTop:'3%', paddingBottom:'3%'}} id='gender' />
+              </div>
+              <div style={{width:'48%'}}>
+                <Label>Age</Label>
+                <FormInput style={{paddingTop:'3%', paddingBottom:'3%'}} id='age' type='text' />
+              </div>
+            </FormGroup>
 
 
-          </FormGroup>
-          <div>
-            <Label>Medical History</Label>
-            <FormArea id='medical' type='text' />
-          </div>
-          <FormGroup>
-            <div style={{ width: '48%' }}>
+
+            <div>
+              <Label>Medical History</Label>
+              <FormArea id='medical' type='text' />
+            </div>
+
+            <div>
               <Label>Password</Label>
               <FormInput id='pass' type='password' />
             </div>
-            <div style={{ width: '48%' }}>
+            <div>
               <Label>Password confirmation</Label>
               <FormInput id='passConfirm' type='password' />
             </div>
-          </FormGroup>
-          <ButtonGroup>
-            <CancelButton as={Link} to='/'>Cancel</CancelButton>
-            <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
-          </ButtonGroup>
 
+            <ButtonGroup>
+              <CancelButton as={Link} to='/'>Cancel</CancelButton>
+              <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
+            </ButtonGroup>
+          </div>
         </Form>
       </div>
     )

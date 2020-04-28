@@ -20,6 +20,11 @@ export const style = {
 export const ImageHolder = styled.div`
   margin: 0
 `
+export const IconDiv = styled.div`
+  display:flex;
+  text-decoration:none;
+  color:black;
+`
 
 export const LoginLink = styled.div`
   padding:1%;

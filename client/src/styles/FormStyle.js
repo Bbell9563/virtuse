@@ -4,7 +4,8 @@ import styled from 'styled-components'
 export const Alert = styled.div`
   background-color: rgba(168, 37, 44, .7);
   width: 100%;
-  padding: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   color:white;
   text-align: center;
 `
@@ -14,8 +15,10 @@ const Button = styled.div`
   padding: 1%;
   text-align:center;
   border-radius: 10px;
-  width:40%;
-  font-weight:bolder;
+  width:47%;
+  font-family: 'Electrolize';
+  font-weight: bolder;
+  font-size: 20px;
 `
 export const ButtonGroup = styled.div`
   display:flex;
@@ -54,8 +57,8 @@ export const FormHeader = styled.div`
 export const Form = styled.form`
   margin: 3% 15%;
   background-color: rgba(105, 89, 100, .3);
-  padding: 3%;
   border-radius: 10px;
+  overflow:hidden;
   @media(max-width: 600px) {
     margin: 3% 3%;
   }
@@ -98,5 +101,6 @@ export const FormGroup = styled.div`
 export const Label = styled.label`
   font-size: 16px;
   font-family: 'Electrolize';
+  font-weight: bolder;
 
 `
