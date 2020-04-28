@@ -8,6 +8,7 @@ export const Alert = styled.div`
   padding-bottom: 1%;
   color:white;
   text-align: center;
+  font-family: 'Black Ops One';
 `
 
 const Button = styled.div`
@@ -30,10 +31,10 @@ export const ButtonGroup = styled.div`
 `
 
 export const SubmitButton = styled(Button)`
-  color: #333;
-  border: 2px solid #333;
+  color: #888;
+  border: 2px solid #888;
   &:hover{
-    background-color: #333;
+    background-color: #888;
     color: white;
   }
   
@@ -50,13 +51,13 @@ export const CancelButton = styled(Button)`
 export const FormHeader = styled.div`
   text-align: center;
   font-size: 50px;
-  font-family: 'Parisienne', cursive;
   font-weight: bolder;
+  font-family: 'Orbitron';
+  color:white;
 `
 
 export const Form = styled.form`
-  margin: 3% 15%;
-  background-color: rgba(105, 89, 100, .3);
+  margin: 1% 15%;
   border-radius: 10px;
   overflow:hidden;
   @media(max-width: 600px) {
@@ -102,5 +103,5 @@ export const Label = styled.label`
   font-size: 16px;
   font-family: 'Electrolize';
   font-weight: bolder;
-
+  color:white;
 `

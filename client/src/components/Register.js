@@ -33,10 +33,8 @@ class Register extends React.Component {
   render() {
     return (
       <div>
-
+        <Alert id='alert' style={{ display: 'none' }}>Alert</Alert>
         <Form>
-          <Alert id='alert' style={{ display: 'none' }}>Alert</Alert>
-          <div style={{ padding: '3%' }}>
             <FormHeader>Register</FormHeader>
 
             <div>
@@ -87,7 +85,6 @@ class Register extends React.Component {
               <CancelButton as={Link} to='/'>Cancel</CancelButton>
               <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
             </ButtonGroup>
-          </div>
         </Form>
       </div>
     )

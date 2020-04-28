@@ -4,7 +4,8 @@ export const NotAdminHolder = styled.div`
   margin: 2% 10%;
   background-color: rgba(105, 89, 100, .3);
   padding: 2%;
-  font-family: 'Electrolize';
+  font-family: 'Orbitron';
+  color:white;
   font-size: 50px;
   text-align: center;
   border-radius: 10px;
@@ -12,7 +13,6 @@ export const NotAdminHolder = styled.div`
 
 export const Holder = styled.div`
   margin: 2% 5%;
-  background-color: rgba(105, 89, 100, .3);
   border-radius: 10px;  
   overflow:hidden;
   padding: 2%;
@@ -20,8 +20,9 @@ export const Holder = styled.div`
 `
 
 export const Header = styled.div`
-  font-family: 'Parisienne', cursive;
+  font-family: 'Orbitron';
   font-size: 60px;
+  color:white;
 `
 
 export const Menu = styled.div`
@@ -29,7 +30,8 @@ export const Menu = styled.div`
   justify-content: space-between;
 `
 export const Options = styled.div`
-  font-family: 'Electrolize';
+  font-family: 'Orbitron';
+  color: white;
   font-size: 20px;
   padding: 1%;
   font-weight: bolder;
@@ -44,7 +46,7 @@ export const GoHome = styled.div`
   text-align:center;
   border-radius: 10px;
   margin-top: 5%;
-  font-family: 'Electrolize';
+  font-family: 'Black Ops One';
   font-weight: bolder;
   font-size: 20px;
   text-decoration:none;

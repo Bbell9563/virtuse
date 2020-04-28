@@ -27,8 +27,8 @@ class User extends React.Component {
             <Info>{user.age}</Info>
             <Label>Gender</Label>
             <Info>{user.gender}</Info>
-            <Label>Medical History</Label>
-            <Info>{user.medical_history}</Info>
+            <Label>Has A Concealed Carry?</Label>
+            <Info>{user.concealed ? <>Yes</> : <>No</> }</Info>
           </Other>
           <Buttons>
             <Edit>Edit</Edit>
@@ -36,10 +36,7 @@ class User extends React.Component {
           </Buttons>
         </InfoHolder>
 
-        <AppointmentHolder>
-          <Header>Your Appointments</Header>
-          <Nothing>No Appointments To Show</Nothing>
-        </AppointmentHolder>
+        
       </>
     )
   }

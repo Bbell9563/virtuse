@@ -11,9 +11,9 @@ class AdminPanel extends React.Component {
   }
 
   changeValue = (id, ids) => {
-    document.getElementById('users').style.backgroundColor = 'rgba(105, 89, 100, 0)'
-    document.getElementById('appointments').style.backgroundColor = 'rgba(105, 89, 100, 0)'
-    document.getElementById(ids).style.backgroundColor = 'rgba(105, 89, 100, .5)'
+    document.getElementById('users').style.backgroundColor = 'rgba(50,50,50, 0)'
+    document.getElementById('appointments').style.backgroundColor = 'rgba(50,50,50, 0)'
+    document.getElementById(id).style.backgroundColor = 'rgba(150,150,150, .1)'
   }
 
   render() {
@@ -23,7 +23,7 @@ class AdminPanel extends React.Component {
         {user.role === 'admin' ?
           <Holder>
             <Header>Admin Panel</Header>
-            <div style={{borderRadius:'10px', overflow:'hidden', backgroundColor:'rgba(105, 89, 100, .3)'}}>
+            <div style={{borderRadius:'10px', overflow:'hidden', backgroundColor:'rgba(50,50,50, .4)'}}>
               <Menu>
                 <Options style={{ width: '50%' }} id='users' onMouseEnter={() => this.changeValue('users', 'appointments')}>
                   All Users
@@ -32,7 +32,7 @@ class AdminPanel extends React.Component {
                   All Appointments
               </Options>
               </Menu>
-              <div style={{ textAlign: 'center', padding: '2%' }}>
+              <div style={{ textAlign: 'center', padding: '2%', color:'white' }}>
                 Nothing Works Yet
             </div>
             </div>

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const InfoHolder = styled.div`
-  background-color: rgba(105, 89, 100, .3);
   margin: 2% 10%;
   padding: 2%;
   border-radius: 10px;
@@ -37,21 +36,24 @@ export const ImageHolder = styled.div`
 `
 export const Name = styled.div`
   text-align: center;
-  font-family: 'Electrolize';
-  font-size: 30px;
+  font-family: 'Orbitron';
+  font-size: 40px;
   margin-top: 3%;
+  color:white;
 `
 export const Label = styled.div`
-  font-family: 'Electrolize';
+  font-family: 'Orbitron';
+  color:white;
   font-weight: bolder;
   font-size: 25px;
   margin-top: 1%;
 `
 
 export const Info = styled.div`
-  font-family: 'Electrolize';
+  font-family: 'Black Ops One';
   font-size: 20px;
   margin-top: 0.5%;
+  color:white;
 `
 
 export const AppointmentHolder = styled.div`
