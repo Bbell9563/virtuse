@@ -11,6 +11,7 @@ import { WebPage } from './styles/AppStyle'
 import Footer from './components/Footer'
 import ProtectedRoute from './components/ProtectedRoute'
 import User from './components/User'
+import AdminPanel from './components/AdminPanel'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <ProtectedRoute exact path='/userpage' component={User} />
+              <ProtectedRoute exact path='/adminpanel' component={AdminPanel} />
               <Route component={NoMatch} />
             </Switch>
           </div>
