@@ -20,7 +20,10 @@ const Button = styled.div`
 export const ButtonGroup = styled.div`
   display:flex;
   justify-content: space-between;
-  margin-top: 2%
+  margin-top: 2%;
+  @media(max-width: 600px) {
+    margin-top: 5%;
+  }
 `
 
 export const SubmitButton = styled(Button)`
@@ -30,6 +33,7 @@ export const SubmitButton = styled(Button)`
     background-color: #333;
     color: white;
   }
+  
 `
 export const CancelButton = styled(Button)`
   color:#a8252c ;
@@ -48,10 +52,13 @@ export const FormHeader = styled.div`
 `
 
 export const Form = styled.form`
-  margin: 5% 15%;
+  margin: 3% 15%;
   background-color: rgba(105, 89, 100, .3);
   padding: 3%;
   border-radius: 10px;
+  @media(max-width: 600px) {
+    margin: 3% 3%;
+  }
 `
 
 export const FormInput = styled.input`
@@ -65,6 +72,11 @@ export const FormInput = styled.input`
   font-size: 20px;
   outline:none;
   font-family: 'Electrolize';
+  @media(max-width: 600px) {
+    font-size: 25px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
 `
 
 export const FormArea = styled.textarea`

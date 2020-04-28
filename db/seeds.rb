@@ -14,5 +14,6 @@ User.create(
   password: 'Sadiegirl8',
   role: 'admin',
   medical_history: 'Nothing Relavent',
-  phone: '(801) 946-4684'
+  phone: '(801) 946-4684',
+  image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
 )

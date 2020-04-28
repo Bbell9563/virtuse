@@ -11,19 +11,28 @@ class Navbar extends React.Component {
 
     if (user) {
       return (
-        <div onClick={() => handleLogout(this.props.history)}>
-          Log-Out
+        <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '1% 0 1% 0' }}>
+            <LoginLink onClick={() => handleLogout(this.props.history)}>
+              Logout
+            </LoginLink>
+            <RegisterLink as={Link} to='/userpage' >
+              {user.name}
+            </RegisterLink>
+          </div>
         </div>
+
+
       )
     } else {
       return (
-        <div style={{ width: '50%', display: 'flex', flexDirection:'column', justifyContent:'center' }}>
-          <div style={{ display: 'flex', justifyContent:'flex-end', padding:'1% 0 1% 0' }}>
+        <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '1% 0 1% 0' }}>
             <LoginLink as={Link} to='/login'>
               Login
             </LoginLink>
             <RegisterLink as={Link} to='/register'>
-                Register
+              Register
             </RegisterLink>
           </div>
         </div>
