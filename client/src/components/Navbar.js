@@ -19,6 +19,12 @@ class Navbar extends React.Component {
             <RegisterLink as={Link} to='/userpage' >
               {user.name}
             </RegisterLink>
+            {user.role === 'admin' ? 
+            <RegisterLink as={Link} to='/adminpanel' >
+              Admin Panel
+            </RegisterLink>
+            : <></>
+            }
           </div>
         </div>
 
