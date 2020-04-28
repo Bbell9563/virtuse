@@ -1,75 +1,106 @@
 import React from 'react'
-import { FormInput, FormArea, Form, FormHeader, FormGroup, ButtonGroup, SubmitButton, CancelButton } from '../styles/FormStyle'
+import { FormInput, FormArea, Form, FormHeader, FormGroup, ButtonGroup, SubmitButton, CancelButton, Label, Alert } from '../styles/FormStyle'
 import { Link } from 'react-router-dom'
+import { AuthConsumer, } from "../providers/AuthProvider"
 
-export default class Register extends React.Component {
-  
+class Register extends React.Component {
+
   handleSubmit = (e) => {
     e.preventDefault()
-
+    const { auth: { handleRegister, }, history, } = this.props;
+    var name = `${document.getElementById('firstName').value}${document.getElementById('lastName').value}`
+    var email = document.getElementById('email').value
+    var phone = document.getElementById('phone').value
+    var gender = document.getElementById('gender').value
+    var age = document.getElementById('age').value
+    var medical_history = document.getElementById('medical').value
+    var password = document.getElementById('pass').value
+    var passConfirm = document.getElementById('passConfirm').value
+    var role = 'user'
+    if (password === passConfirm) {
+      handleRegister({
+         email, password, phone, gender, medical_history, age, role, name
+        }, history);
+    }
+    else {
+      var alert = document.getElementById('alert')
+      alert.innerHTML = 'Your Passwords Do Not Match'
+      alert.style.display = 'block'
+    }
   }
 
   render() {
     return (
-      <Form>
-        <FormHeader>Register</FormHeader>
-        <FormGroup>
-          <div style={{ width: '48%' }}>
-            <label>First Name</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
-          </div>
-          <div style={{ width: '48%' }}>
-            <label>Last Name</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
-          </div>
-        </FormGroup>
+      <div>
+        <Alert id='alert' style={{display:'none'}}>Alert</Alert>
+        <Form>
+          <FormHeader>Register</FormHeader>
+          <FormGroup>
+            <div style={{ width: '48%' }}>
+              <Label>First Name</Label>
+              <FormInput id='firstName' type='text' />
+            </div>
+            <div style={{ width: '48%' }}>
+              <Label>Last Name</Label>
+              <FormInput id='lastName' type='text' />
+            </div>
+          </FormGroup>
 
-        <FormGroup>
-          <div style={{ width: '34%' }}>
-            <label>Email</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
-          </div>
+          <FormGroup>
+            <div style={{ width: '48%' }}>
+              <Label>Email</Label>
+              <FormInput id='email' type='text' />
+            </div>
 
-          <div style={{ width: '34%' }}>
-            <label>Phone</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
-          </div>
-          <div style={{ width: '15%' }}>
-            <label>Gender</label>
-            <select style={{ width: '100%', fontSize: '28px', border: 'none' }} type='text' placeholder='Gender' >
-              <option value='Male'>Male</option>
-              <option value='Female'>Female</option>
-              <option value='Other'>Other</option>
-            </select>
-          </div>
-
-          <div style={{ width: '5%' }}>
-            <label>Age</label>
-            <FormInput style={{ padding: '15%' }} type='text' />
-          </div>
+            <div style={{ width: '48%' }}>
+              <Label>Phone</Label>
+              <FormInput id='phone' type='text' />
+            </div>
+          </FormGroup>
+          <FormGroup>
+            <div style={{ width: '48%' }}>
+              <Label>Gender</Label>
+              <FormInput id='gender' />
+            </div>
+            <div style={{ width: '48%' }}>
+              <Label>Age</Label>
+              <FormInput id='age' type='text' />
+            </div>
 
 
-        </FormGroup>
-        <div>
-          <label>Medical History</label>
-          <FormArea style={{ padding: '2%' }} type='text' />
-        </div>
-        <FormGroup>
-          <div style={{ width: '48%' }}>
-            <label>Password</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
+          </FormGroup>
+          <div>
+            <Label>Medical History</Label>
+            <FormArea id='medical' type='text' />
           </div>
-          <div style={{ width: '48%' }}>
-            <label>Password confirmation</label>
-            <FormInput style={{ padding: '2%' }} type='text' />
-          </div>
-        </FormGroup>
-        <ButtonGroup>
-          <CancelButton as={Link} to='/'>Cancel</CancelButton>
-          <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
-        </ButtonGroup>
+          <FormGroup>
+            <div style={{ width: '48%' }}>
+              <Label>Password</Label>
+              <FormInput id='pass' type='password' />
+            </div>
+            <div style={{ width: '48%' }}>
+              <Label>Password confirmation</Label>
+              <FormInput id='passConfirm' type='password' />
+            </div>
+          </FormGroup>
+          <ButtonGroup>
+            <CancelButton as={Link} to='/'>Cancel</CancelButton>
+            <SubmitButton onClick={this.handleSubmit}>Submit</SubmitButton>
+          </ButtonGroup>
 
-      </Form>
+        </Form>
+      </div>
     )
   }
 }
+
+export default class ConnectedRegister extends React.Component {
+  render() {
+    return (
+      <AuthConsumer>
+        {auth => <Register {...this.props} auth={auth} />}
+      </AuthConsumer>
+    )
+  }
+}
+

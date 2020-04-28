@@ -10,8 +10,8 @@ class Navbar extends React.Component {
 
     if (user) {
       return (
-        <div>
-          Logged In
+        <div onClick={ () => handleLogout(this.props.history) }>
+          Log-Out
         </div>
       )
     } else {
@@ -36,7 +36,7 @@ class Navbar extends React.Component {
     return (
       <NavHolder>
         <div>
-          <Link to='/' style={style.link}>
+          <Link to='/' style={{...style.link, fontFamily: 'Parisienne', fontSize:'40px'}}>
             Shakti
         </Link>
         </div>
