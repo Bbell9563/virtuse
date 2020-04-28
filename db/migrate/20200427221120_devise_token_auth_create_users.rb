@@ -37,7 +37,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.0]
       t.string :gender
       t.string :role
       t.string :age
-      t.text :medical_history
+      t.boolean :concealed
 
       ## Tokens
       t.json :tokens

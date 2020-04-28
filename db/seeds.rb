@@ -13,7 +13,7 @@ User.create(
   email: 'Bbell9563@gmail.com',
   password: 'Sadiegirl8',
   role: 'admin',
-  medical_history: 'Nothing Relavent',
+  concealed: true,
   phone: '(801) 946-4684',
   image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
 )

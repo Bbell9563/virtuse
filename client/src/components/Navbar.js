@@ -19,11 +19,11 @@ class Navbar extends React.Component {
             <RegisterLink as={Link} to='/userpage' >
               {user.name}
             </RegisterLink>
-            {user.role === 'admin' ? 
-            <RegisterLink as={Link} to='/adminpanel' >
-              Admin Panel
+            {user.role === 'admin' ?
+              <RegisterLink as={Link} to='/adminpanel' >
+                Admin Panel
             </RegisterLink>
-            : <></>
+              : <></>
             }
           </div>
         </div>
@@ -52,9 +52,13 @@ class Navbar extends React.Component {
         <div >
           <IconDiv as={Link} to='/' >
 
-            <img src={Logo} style={{ width: '100px'}} />
-            <div style={{bottom:'10px', right:'20px', display:'flex', flexDirection:'column', justifyContent:'flex-end', marginLeft: '-35px', fontSize:'10px', marginBottom:'14px'}}>Yoga And Holistics</div>
-
+            <img src={Logo} style={{ width: '50px' }} />
+            <div style={{display:'flex', flexDirection:'column', justifyContent:'center'}}>
+              <div style={{textAlign:'center', marginLeft: '3%'}}>
+                <div style={{ fontFamily: 'Orbitron', color: 'white', fontSize: '30px' }}>VIRTUS</div>
+                <div style={{ fontFamily: 'Black Ops One', color: 'white', fontSize: '12px' }}>Tactical Defense</div>
+              </div>
+            </div>
           </IconDiv>
         </div>
         {this.rightNavItems()}

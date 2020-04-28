@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_221309) do
     t.string "gender"
     t.string "role"
     t.string "age"
-    t.text "medical_history"
+    t.boolean "concealed"
     t.json "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
